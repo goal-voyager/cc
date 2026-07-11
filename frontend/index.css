@@ -1,0 +1,123 @@
+:root {
+  --blue-deep: #0369a1;
+  --blue-mid: #0ea5e9;
+  --blue-soft: #f0f9ff;
+  --blue-line: #bae6fd;
+  --ink: #1a2433;
+  --ink-soft: #5b6b82;
+  --white: #ffffff;
+  --radius: 14px;
+  --gap: 1rem;
+  --shadow: 0 4px 16px rgba(3, 105, 161, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+a { color: var(--blue-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1rem; }
+.container.narrow { max-width: 32rem; padding-top: 1.5rem; }
+
+/* Pins footer to the bottom on short pages, scrolls normally on long ones */
+.page-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.main-content { flex: 1; }
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--blue-deep);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 3px solid var(--blue-mid);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; flex-wrap: wrap; gap: 0.5rem; }
+.brand { font-weight: 700; font-size: 1.25rem; color: var(--white); display: flex; align-items: center; gap: 0.4rem; }
+.brand:hover { text-decoration: none; }
+.brand .thread { color: var(--blue-mid); }
+.main-nav { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
+.main-nav a { color: var(--white); font-size: 0.92rem; }
+.main-nav a:hover { color: var(--blue-line); }
+.btn-nav { background: var(--white); color: var(--blue-deep) !important; padding: 0.3rem 0.7rem; border-radius: 999px; font-weight: 600; }
+.user-pill { color: var(--white); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+.link-btn { background: none; border: none; color: var(--blue-line); text-decoration: underline; cursor: pointer; font-size: 0.9rem; padding: 0; }
+.link-btn.danger { color: #f87171; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--blue-soft); padding: 2.5rem 1rem; text-align: center; border-bottom: 1px dashed var(--blue-line); }
+.hero h1 { color: var(--blue-deep); font-size: 1.8rem; margin: 0 0 0.5rem; }
+.hero p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto 1.2rem; }
+
+.btn { display: inline-block; background: var(--blue-deep); color: var(--white); padding: 0.65rem 1.3rem; border-radius: 999px; font-weight: 600; border: none; cursor: pointer; font-size: 0.95rem; }
+.btn:hover { background: var(--blue-mid); text-decoration: none; }
+.btn.secondary { background: var(--white); color: var(--blue-deep); border: 2px solid var(--blue-deep); }
+.btn.danger { background: #dc2626; margin-top: 0.6rem; }
+.btn.danger:hover { background: #b91c1c; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ---------- Sections / Cards ---------- */
+main { padding: 1.5rem 0 3rem; }
+.section-title { color: var(--blue-deep); border-left: 4px solid var(--blue-mid); padding-left: 0.6rem; margin: 0 0 1rem; }
+.muted { color: var(--ink-soft); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--gap); }
+.card { background: var(--white); border: 1px solid var(--blue-line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.card img { width: 100%; height: 160px; object-fit: cover; background: var(--blue-soft); }
+.card-body { padding: 0.85rem; flex: 1; display: flex; flex-direction: column; }
+.card-body h3 { margin: 0 0 0.3rem; font-size: 1.02rem; }
+.card-body .price { color: var(--blue-deep); font-weight: 700; margin: 0.3rem 0; }
+.card-body .meta { color: var(--ink-soft); font-size: 0.82rem; margin: 0 0 0.5rem; }
+.card-body .btn { margin-top: auto; text-align: center; }
+.detail-card { max-width: 640px; margin: 0 auto; }
+.detail-card img { height: 260px; }
+
+/* ---------- Filters ---------- */
+.filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.filters select, .filters input { padding: 0.5rem 0.7rem; border: 1px solid var(--blue-line); border-radius: 8px; font-size: 0.9rem; }
+
+/* ---------- Forms ---------- */
+form.stack { display: flex; flex-direction: column; gap: 0.9rem; max-width: 32rem; }
+label { font-weight: 600; font-size: 0.9rem; }
+input, textarea, select { width: 100%; padding: 0.6rem 0.7rem; border: 1px solid var(--blue-line); border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+textarea { resize: vertical; min-height: 90px; }
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+.form-msg { padding: 0.6rem 0.8rem; border-radius: 8px; font-size: 0.9rem; }
+.form-msg.ok { background: #e7f6ec; color: #1a7a3c; }
+.form-msg.err { background: #fdeaea; color: #b3261e; }
+
+/* ---------- Artisan profile ---------- */
+.profile-hero { display: flex; gap: 1.2rem; align-items: center; background: var(--blue-soft); border-radius: var(--radius); padding: 1.2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.profile-hero img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--white); box-shadow: var(--shadow); }
+.profile-hero .info h2 { margin: 0 0 0.2rem; color: var(--blue-deep); }
+.profile-hero .info p.tag { color: var(--ink-soft); margin: 0 0 0.5rem; font-size: 0.9rem; }
+
+/* ---------- Admin dashboard ---------- */
+.tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.tab { background: var(--blue-soft); border: 1px solid var(--blue-line); color: var(--blue-deep); padding: 0.5rem 1rem; border-radius: 999px; cursor: pointer; font-weight: 600; }
+.tab.active { background: var(--blue-deep); color: var(--white); }
+.admin-table { width: 100%; border-collapse: collapse; background: var(--white); }
+.admin-table th, .admin-table td { text-align: left; padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--blue-line); font-size: 0.9rem; }
+.admin-table th { color: var(--blue-deep); }
+
+.loading-text { color: var(--ink-soft); padding: 2rem 0; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--blue-deep); color: var(--blue-line); text-align: center; padding: 1.2rem 1rem; font-size: 0.85rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.4rem; }
+  .main-nav { justify-content: center; width: 100%; }
+  .profile-hero { flex-direction: column; text-align: center; }
+  .admin-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
